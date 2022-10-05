@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "merch",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
     "next": "12.3.1",
+    "next-sanity-image": "^4.1.0",
+    "node-modules": "^1.0.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
-    "eslint": "8.23.1",
+    "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }
 }
