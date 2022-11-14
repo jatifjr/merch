@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding: 14px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.whiteSpace {
+    width: auto;
+    height: 50px;
+}
+
+.copyright {
+    margin: auto;
+    font-size: 12pt;
+    font-weight: 400;
+    font-family: 'Cormorant', serif;
+}
+
+.devs {
+    font-weight: bold;
+    font-family: 'Megrim', cursive;
+}
+
+.devs:hover {
+    text-shadow: 0px 0px 2px #40ffcc;
+}

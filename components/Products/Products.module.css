@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding: 14px;
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.whiteSpace {
+    width: auto;
+    height: 40px;
+}
+
+.heading {
+    margin: auto;
+    font-size: 24pt;
+    font-weight: 400;
+    font-family: 'Cormorant', serif;
+}
