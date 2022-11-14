@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
 @font-face {
   font-family: Sprat;
-  src: urlurl("../src/fonts/Sprat-Variable.woff2") format("woff2");
+  src: url("../src/fonts/Sprat-Variable.woff2") format("woff2");
 }
 
 html,

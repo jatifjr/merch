@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Navbar, Hero, Footer, Products } from "../components/components";
 
-export default function Home({ children }) {
+export default function Home() {
     return (
         <div>
             <Head>
@@ -13,7 +13,6 @@ export default function Home({ children }) {
             <Hero />
             <main>
                 <Products />
-                { children }
             </main>
             <Footer />
         </div>
