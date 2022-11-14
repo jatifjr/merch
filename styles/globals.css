@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+
 @font-face {
   font-family: Sprat;
+  font-weight: 100;
+  font-stretch: expanded;
   src: url("../src/fonts/Sprat-Variable.woff2") format("woff2");
 }
 
@@ -31,8 +34,9 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
-    background: #010101;
+    background: #101010;
   }
 }

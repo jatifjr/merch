@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+}

@@ -6,13 +6,8 @@ const Products = ({ products }) => {
   return (
     <div className={style.container}>
       <span className={style.whiteSpace}></span>
-      <h1 className={style.heading}>Support us by buying our merch</h1>
+      <h1 className={style.heading}>Beri dukungan dengan membeli merchandise kami</h1>
       <span className={style.whiteSpace}></span>
-      <div className="card-container">
-        {products?.map((product) => (
-          <Card key={product.id} product={product} />
-        ))}
-      </div>
     </div>
   )
 }

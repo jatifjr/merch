@@ -1,7 +1,12 @@
+import React from "react";
 import Head from "next/head";
-import { Navbar, Hero, Footer, Products } from "../components/components";
+import style from "../styles/Home.module.css";
 
-export default function Home() {
+import { client } from "../lib/client";
+
+import { Navbar, Hero, Footer, Products, Card } from "../components/components";
+
+const Home = ({ products }) => {
     return (
         <div>
             <Head>
@@ -11,10 +16,24 @@ export default function Home() {
             </Head>
             <Navbar />
             <Hero />
-            <main>
-                <Products />
-            </main>
+            <Products />
+            <div className={style.container}>
+                {products?.map((product) => (
+                    <Card key={product._id} product={product} />
+                ))}
+            </div>
             <Footer />
         </div>
     );
-}
+};
+
+export const getServerSideProps = async () => {
+    const query = '*[_type == "product"]';
+    const products = await client.fetch(query);
+
+    return {
+        props: { products },
+    };
+};
+
+export default Home;
