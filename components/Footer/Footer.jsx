@@ -9,7 +9,7 @@ const Footer = () => {
       <span className={style.whiteSpace}></span>
       <h3 className={style.copyright}>
         2022 
-        <Link href='/' className={style.devs}>Menjelang Hujan </Link>
+        <Link href='/' className={style.devs}> Menjelang Hujan </Link>
         All rights reserved
       </h3>
       <span className={style.whiteSpace}></span>

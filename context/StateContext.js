@@ -1,21 +1,25 @@
 import React, { createContext, useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
     const [showCart, setShowCart] = useState(false);
-    const [cartItems, setCartItems] = useState();
-    const [totalPrice, setTotalPrice] = useState();
-    const [totalQty, setTotalQty] = useState();
-    const [Qty, setQty] = useState(1);
+    const [cartItems, setCartItems] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalQuantities, setTotalQuantities] = useState(0);
+    const [quantity, setQty] = useState(1);
+
+    let foundProduct;
+    let index;
 
     const onAdd = (product, quantity) => {
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
 
-        if (checkProductInCart) {
-            setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * product.quantity);
-            setTotalPrice((prevTotalPrice) => prevTotalQuantities + quantity);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * product.quantity);
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
+        if (checkProductInCart) {
             const updatedCartItems = cartItems.map((cartProduct) => {
                 if (cartProduct === product._id)
                     return {
@@ -23,6 +27,49 @@ export const StateContext = ({ children }) => {
                         quantity: cartProduct.quantity + quantity,
                     };
             });
+
+            setCartItems(updatedCartItems);
+        } else {
+            product.quantity = quantity;
+
+            setCartItems([...cartItems, { ...product }]);
+        }
+        toast.success(`${quantity} ${product.name} ditambahkan ke keranjang.`);
+    };
+
+    const onRemove = (product) => {
+        foundProduct = cartItems.find((item) => item._id === product._id);
+        const newCartItems = cartItems.filter((item) => item._id !== product._id);
+
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
+        setCartItems(newCartItems);
+    };
+
+    const toggleCartItemQuantity = (id, value) => {
+        foundProduct = cartItems.find((item) => item._id === id);
+        index = cartItems.findIndex((product) => product._id === id);
+
+        if (value === "add") {
+            setCartItems((prevCartItems) =>
+                prevCartItems.map((item) => {
+                    if (item._id === id) {
+                        return { ...item, quantity: foundProduct.quantity + 1 };
+                    }
+                    return item;
+                })
+            );
+        } else if (value === "rmv") {
+            if (foundProduct.quantity > 1) {
+                setCartItems((prevCartItems) =>
+                    prevCartItems.map((item) => {
+                        if (item._id === id) {
+                            return { ...item, quantity: foundProduct.quantity - 1 };
+                        }
+                        return item;
+                    })
+                );
+            }
         }
     };
 
@@ -42,12 +89,19 @@ export const StateContext = ({ children }) => {
         <Context.Provider
             value={{
                 showCart,
+                setShowCart,
                 cartItems,
                 totalPrice,
-                totalQty,
-                Qty,
+                totalQuantities,
+                quantity,
                 addQty,
                 rmvQty,
+                onAdd,
+                toggleCartItemQuantity,
+                onRemove,
+                setCartItems,
+                setTotalPrice,
+                setTotalQuantities,
             }}
         >
             {children}

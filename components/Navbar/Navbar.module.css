@@ -22,22 +22,25 @@
 }
 
 .logo:hover {
-    text-shadow: 0px 0px 2px #40ffcc;
+    text-shadow: 0px 0px 4px #40ffcc;
 }
 
 .cartContainer {
     color: #fff;
     cursor: pointer;
     border: none;
-    font-size: 24px;
+    font-size: 14pt;
     align-items: center;
     background-color: transparent;
     width: 64px;
     height: 32px;
-    text-shadow: 0px 0px 2px #40ffcc;
+}
+
+.cartContainer:hover {
+    text-shadow: 0px 0px 4px #40ffcc;
 }
 
 .cartQty {
-    font-size: 12px;
+    font-size: 12pt;
     font-family: 'Cormorant', serif;
 }

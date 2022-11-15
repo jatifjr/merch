@@ -1,9 +1,75 @@
-import React from 'react'
 import style from './Cart.module.css'
+import React, { useRef } from 'react'
+import Link from 'next/link'
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft } from 'react-icons/ai'
+import toast from 'react-hot-toast'
+
+import { useStateContext } from '../../context/StateContext'
+import { urlFor } from '../../lib/client'
 
 const Cart = () => {
+  const cartRef = useRef()
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext()
+
   return (
-    <div>Cart</div>
+    <div className={style.wrapper} ref={cartRef}>
+      <div className={style.container}>
+        <button type='button' className={style.cartHeading} onClick={() => setShowCart(false)}>
+          <AiOutlineLeft />
+          <span className={style.heading}>Keranjang</span>
+          <span className={style.cartItems}>({totalQuantities} item)</span>
+        </button>
+
+        {cartItems.length < 1 && (
+          <div className={style.emptyCart}>
+            <p className={style.emptyCartText}>Keranjang kosong, mulai belanja</p>
+          </div>
+        )}
+
+        <div className={style.productContainer}>
+          {cartItems.length >= 1 && cartItems.map((item, index) => (
+            <div key={index} className={style.product}>
+              <img src={urlFor(item?.image[0])} className={style.productImage} />
+              <div className={style.desc}>
+                <div className={style.flexTop}>
+                  <h1 className={style.productName}>{item.name}</h1>
+                  <h2 className={style.detailsPrice}>Rp. {item.price}.000</h2>
+                </div>
+                <div className={style.flexBottom}>
+                    <button className={style.cancel} onClick={onRemove}>
+                      X
+                    </button>
+                    <p className={style.quantityDesc}>
+                      <span className={style.qtyBtn} onClick={() => toggleCartItemQuantity(item._id, 'rmv')}>
+                        <AiOutlineMinus />
+                      </span>
+                      <span className={style.qtyQty}>{item.quantity}</span>
+                      <span className={style.qtyBtn} onClick={() => toggleCartItemQuantity(item._id, 'add')}>
+                        <AiOutlinePlus />
+                      </span>
+                    </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {cartItems.length >= 1 && (
+          <div>
+            <div className={style.cartBottom}>
+              <div className={style.subtotal}>
+                <h2>Total</h2>
+                <h2>Rp. {totalPrice}.000</h2>
+              </div>
+              <div className={style.btnContainer}>
+                <button type='button' className={style.btnCheckout} onClick=''>
+                  Bayar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
