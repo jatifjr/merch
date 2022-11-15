@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 64px 14px;
+    width: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+    width: 100%;
+}
+
+.imageLargeContainer {
+    cursor: default;
+}
+
+.imageLarge {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+
+.imageSmallContainer {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.imageSmall {
+    cursor: pointer;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.imageSmall:hover {
+    box-shadow: 0px 0px 4px #40ffcc;
+}
+
+.detailsContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.desc {
+    margin: 0;
+}
+
+.detailsName {
+    margin: 0;
+    font-size: 32pt;
+    font-weight: 700;
+}
+
+.title {
+    margin: 0;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.detailsDetails {
+    margin: 0;
+    font-size: 18pt;
+    font-weight: 400;
+}
+
+.detailsPrice {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: 700;
+}
+
+.quantity {
+    width: 100%;
+    max-width: 200px;
+    margin: 0;
+}
+
+.quantityDesc {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.qtyBtn {
+    margin: 0;
+    padding: 8px 8px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.qtyBtn:hover {
+    box-shadow: 0px 0px 4px #40ffcc;
+}
+
+.qtyQty {
+    padding: 8px 0;
+}
+
+.buttons {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 16px;
+}
+
+.buttons button {
+    border: none;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 8px 0;
+    cursor: pointer;
+    font-family: 'Cormorant', serif;
+}
+
+.buttons button:hover {
+    text-shadow: 0px 0px 4px #40ffcc;
+}

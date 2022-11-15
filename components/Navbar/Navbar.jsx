@@ -7,9 +7,13 @@ const Navbar = () => {
   return (
     <div className={style.container}>
       <span className={style.hiddenSpan}></span>
-      <div className={style.logo}>Menjelang Hujan</div>
+      <div className={style.logo}>
+        <Link href="/">
+          Menjelang Hujan
+        </Link>
+      </div>
       <button type='button' className={style.cartContainer} onClick=''>
-        <span className={style.cartQty}>69</span>
+        <span className={style.cartQty}>69420</span>
         <AiOutlineShopping className={style.cartIcon} />
       </button>
     </div>

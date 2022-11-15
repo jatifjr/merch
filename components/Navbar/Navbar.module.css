@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 13.5px;
+    padding: 13.5px 14px;
     align-items: center;
     border-bottom: 1px solid #ffffff25;
     -webkit-user-select: none;
@@ -15,7 +15,7 @@
 
 .logo {
     color: #fff;
-    cursor: default;
+    cursor: pointer;
     font-size: 18pt;
     font-family: 'Megrim', cursive;
     font-weight: 700;

@@ -2,7 +2,7 @@ import React from 'react'
 import style from './Products.module.css'
 import Card from '../Card/Card'
 
-const Products = ({ products }) => {
+const Products = () => {
   return (
     <div className={style.container}>
       <span className={style.whiteSpace}></span>

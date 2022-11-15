@@ -28,6 +28,7 @@ a {
 
 * {
   box-sizing: border-box;
+  /* border: 1px solid white; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +38,6 @@ a {
 
   body {
     color: white;
-    background: #101010;
+    background: #000;
   }
 }
