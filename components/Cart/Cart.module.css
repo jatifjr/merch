@@ -21,8 +21,8 @@
     display: flex;
     align-items: center;
     font-size: 14pt;
-    font-family: 'Cormorant', serif;
     font-weight: 400;
+    font-family: 'Cormorant', serif;
     cursor: pointer;
     gap: 8px;
     padding: 10px;
@@ -149,6 +149,7 @@
     text-align: center;
     margin: auto;
     width: 100%;
+    font-family: Sprat;
 }
 
 .cartBottom {
@@ -180,6 +181,14 @@
     margin: 0;
     margin-top: 14px;
     padding: 8px 8px;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: Sprat;
     border: 1px solid #fff;
-    background-color: transparent;
+    color: #000;
+    background-color: #fff;
+}
+
+.btnCheckout:hover {
+    box-shadow: 0px 0px 4px #40ffcc;
 }

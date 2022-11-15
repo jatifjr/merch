@@ -30,7 +30,7 @@ const ProductDetails = ({ product }) => {
                         <p className={style.detailsDetails}>{details}</p>
                     </div>
                     <div className={style.quantity}>
-                        <h2 className={style.detailsPrice}>Rp. {price}.000</h2>
+                        <h2 className={style.detailsPrice}>Rp. {price}K</h2>
                         <div className={style.buttons}>
                             <p className={style.title}>Jumlah :</p>
                             <p className={style.quantityDesc}>

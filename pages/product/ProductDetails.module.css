@@ -59,6 +59,7 @@
     margin-bottom: 4px;
     font-size: 32pt;
     font-weight: 700;
+    font-family: Sprat;
 }
 
 .title {
@@ -114,6 +115,7 @@
     text-align: center;
     margin: auto;
     width: 100%;
+    font-family: Sprat;
 }
 
 .buttons {
@@ -131,7 +133,7 @@
     font-size: 12pt;
     padding: 8px 0;
     cursor: pointer;
-    font-family: 'Cormorant', serif;
+    font-family: Sprat;
 }
 
 .buttons button:hover {

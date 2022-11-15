@@ -27,8 +27,8 @@ const Cart = () => {
         )}
 
         <div className={style.productContainer}>
-          {cartItems.length >= 1 && cartItems.map((item, index) => (
-            <div key={index} className={style.product}>
+          {cartItems.length >= 1 && cartItems.map((item) => (
+            <div key={item._id} className={style.product}>
               <img src={urlFor(item?.image[0])} className={style.productImage} />
               <div className={style.desc}>
                 <div className={style.flexTop}>
@@ -36,7 +36,7 @@ const Cart = () => {
                   <h2 className={style.detailsPrice}>Rp. {item.price}.000</h2>
                 </div>
                 <div className={style.flexBottom}>
-                    <button className={style.cancel} onClick={onRemove}>
+                    <button className={style.cancel} onClick={() => onRemove(item)}>
                       X
                     </button>
                     <p className={style.quantityDesc}>
@@ -58,7 +58,7 @@ const Cart = () => {
             <div className={style.cartBottom}>
               <div className={style.subtotal}>
                 <h2>Total</h2>
-                <h2>Rp. {totalPrice}.000</h2>
+                <h2>Rp. {totalPrice}K</h2>
               </div>
               <div className={style.btnContainer}>
                 <button type='button' className={style.btnCheckout} onClick=''>

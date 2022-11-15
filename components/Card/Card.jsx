@@ -12,7 +12,7 @@ const Card = ({ product: { image, name, slug, price } }) => {
         <div className={style.card}>
           <img className={style.cardImg} src={urlFor(image && image[0])} alt="cardImage" />
           <h4 className={style.cardName}>{name}</h4>
-          <h4 className={style.cardPrice}>Rp. {price}.000</h4>
+          <h4 className={style.cardPrice}>Rp. {price}K</h4>
         </div>
       </Link>
     </div>
