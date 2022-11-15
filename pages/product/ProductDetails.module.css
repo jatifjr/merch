@@ -58,7 +58,7 @@
     margin-top: 0px;
     margin-bottom: 4px;
     font-size: 32pt;
-    font-weight: 700;
+    font-weight: 100;
     font-family: 'Sprat';
 }
 
@@ -115,6 +115,7 @@
     text-align: center;
     margin: auto;
     width: 100%;
+    font-weight: 100;
     font-family: 'Sprat';
 }
 
@@ -133,6 +134,7 @@
     font-size: 12pt;
     padding: 8px 0;
     cursor: pointer;
+    font-weight: 100;
     font-family: 'Sprat';
 }
 
