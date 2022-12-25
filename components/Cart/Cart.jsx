@@ -4,13 +4,31 @@ import Link from 'next/link'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft } from 'react-icons/ai'
 import toast from 'react-hot-toast'
 import { CurrencyFormat } from '../../utilities/FormatCurrency'
-
 import { useStateContext } from '../../context/StateContext'
 import { urlFor } from '../../lib/client'
+import getStripe from '../../lib/stripe'
 
 const Cart = () => {
   const cartRef = useRef()
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext()
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+    const response = await fetch('/api/checkout_sessions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if(response.statusCode === 500) return;
+    
+    const data = await response.json();
+
+    toast.loading('Redirecting...');
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  }
 
   return (
     <div className={style.wrapper} ref={cartRef}>
@@ -62,7 +80,7 @@ const Cart = () => {
                 <h2>{CurrencyFormat(totalPrice)}</h2>
               </div>
               <div className={style.btnContainer}>
-                <button type='button' className={style.btnCheckout} onClick=''>
+                <button type='button' className={style.btnCheckout} onClick={handleCheckout}>
                   Bayar
                 </button>
               </div>

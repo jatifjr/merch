@@ -38,7 +38,12 @@ export const getStaticProps = async ({ params: { slug } }) => {
 const ProductDetails = ({ product }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
-    const { addQty, rmvQty, quantity, onAdd } = useStateContext();
+    const { addQty, rmvQty, quantity, onAdd, setShowCart } = useStateContext();
+    const handleBuyNow = () => {
+        onAdd(product, quantity);
+
+        setShowCart(true);
+    };
 
     return (
         <div>
@@ -49,7 +54,7 @@ const ProductDetails = ({ product }) => {
                     </div>
                     <div className={style.imageSmallContainer}>
                         {image?.map((item, i) => (
-                            <img alt="slugImg" key={product._id} src={urlFor(item)} className={style.imageSmall} onMouseEnter={() => setIndex(i)} />
+                            <img alt="slugImg" key={i} src={urlFor(item)} className={style.imageSmall} onMouseEnter={() => setIndex(i)} />
                         ))}
                     </div>
                 </div>
@@ -75,7 +80,7 @@ const ProductDetails = ({ product }) => {
                             <button type="button" onClick={() => onAdd(product, quantity)} className={style.addBtn}>
                                 + Keranjang +
                             </button>
-                            <button type="button" onClick="" className={style.buyNowBtn}>
+                            <button type="button" onClick={handleBuyNow} className={style.buyNowBtn}>
                                 Beli Langsung
                             </button>
                         </div>
