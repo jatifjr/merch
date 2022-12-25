@@ -17,8 +17,8 @@
 
 .cardImg {
     object-fit: cover;
-    width: 360px;
-    height: 400px;
+    width: 280px;
+    height: 320px;
     border-radius: 2px;
     background: #505050;
 }
