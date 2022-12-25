@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import Link from 'next/link'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft } from 'react-icons/ai'
 import toast from 'react-hot-toast'
+import { CurrencyFormat } from '../../utilities/FormatCurrency'
 
 import { useStateContext } from '../../context/StateContext'
 import { urlFor } from '../../lib/client'
@@ -33,7 +34,7 @@ const Cart = () => {
               <div className={style.desc}>
                 <div className={style.flexTop}>
                   <h1 className={style.productName}>{item.name}</h1>
-                  <h2 className={style.detailsPrice}>Rp. {item.price}.000</h2>
+                  <h2 className={style.detailsPrice}>{CurrencyFormat(item.price)}</h2>
                 </div>
                 <div className={style.flexBottom}>
                     <button className={style.cancel} onClick={() => onRemove(item)}>
@@ -58,7 +59,7 @@ const Cart = () => {
             <div className={style.cartBottom}>
               <div className={style.subtotal}>
                 <h2>Total</h2>
-                <h2>Rp. {totalPrice}K</h2>
+                <h2>{CurrencyFormat(totalPrice)}</h2>
               </div>
               <div className={style.btnContainer}>
                 <button type='button' className={style.btnCheckout} onClick=''>

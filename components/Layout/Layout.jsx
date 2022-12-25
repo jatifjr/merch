@@ -6,11 +6,6 @@ import style from './Layout.module.css'
 const Layout = ({ children }) => {
   return (
     <div className={style.container}>
-        <Head>
-            <title>Menjelang Hujan Web Store</title>
-            <meta name="description" content="Menjelang Hujan Web Store" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
         <header>
             <Navbar />
         </header>

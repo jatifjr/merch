@@ -10,7 +10,7 @@
 .container {
     height: 100vh;
     width: 600px;
-    background-color: #000;
+    background-color: var(--bg-dark);
     float: right;
     padding: 10px 14px;
     position: relative;
@@ -18,6 +18,7 @@
 }
 
 .cartHeading {
+    color: inherit;
     display: flex;
     align-items: center;
     font-size: 14pt;
@@ -106,9 +107,9 @@
     cursor: pointer;
     margin: 0;
     padding: 8px 8px;
-    border: 1px solid #fff;
-    color: #fff;
-    background-color: #000;
+    border: 1px solid var(--text-dark);
+    color: inherit;
+    background-color: inherit;
     background-color: transparent;
 }
 
@@ -127,8 +128,8 @@
     display: flex;
     margin: 0;
     justify-content: space-between;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid var(--text-dark);
+    border-bottom: 1px solid var(--text-dark);
     width: 100%;
     max-width: 144px;
 }
@@ -136,8 +137,8 @@
 .qtyBtn {
     margin: 0;
     padding: 8px 8px;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    border-left: 1px solid var(--text-dark);
+    border-right: 1px solid var(--text-dark);
     text-align: center;
     align-items: center;
     cursor: pointer;
@@ -185,13 +186,56 @@
     margin-top: 14px;
     padding: 8px 8px;
     font-size: 14pt;
-    font-weight: 100;
+    font-weight: 700;
     font-family: 'Sprat';
-    border: 1px solid #fff;
-    color: #000;
-    background-color: #fff;
+    border: 1px solid var(--text-dark);
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 .btnCheckout:hover {
     box-shadow: 0px 0px 4px #40ffcc;
+}
+
+@media (prefers-color-scheme: light) {
+    .cancel {
+        border: 1px solid var(--text);
+    }
+    .quantityDesc {
+        border-top: 1px solid var(--text);
+        border-bottom: 1px solid var(--text);
+    }
+
+    .qtyBtn {
+        border-left: 1px solid var(--text);
+        border-right: 1px solid var(--text);
+    }
+    .container {
+        background-color: var(--bg);
+    }
+    .btnCheckout {
+        color: var(--text-dark);
+        background-color: var(--bg-dark);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .cancel {
+        border: 1px solid var(--text-dark);
+    }
+    .quantityDesc {
+        border-top: 1px solid var(--text-dark);
+        border-bottom: 1px solid var(--text-dark);
+    }
+    .qtyBtn {
+        border-left: 1px solid var(--text-dark);
+        border-right: 1px solid var(--text-dark);
+    }
+    .container {
+        background-color: var(--bg-dark);
+    }
+    .btnCheckout {
+        color: var(--text);
+        background-color: var(--bg);
+    }
 }

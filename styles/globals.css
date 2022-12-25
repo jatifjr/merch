@@ -9,12 +9,24 @@
   src: url("../src/fonts/Sprat-Variable.woff2") format("woff2");
 }
 
-html,
-body {
+:root {
+  --text: #000;
+  --bg: #eee;
+  --text-dark: #fff;
+  --bg-dark: #101010;
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-family: 'Cormorant', serif;
+  /* border: 1px solid white; */
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -26,9 +38,15 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-  /* border: 1px solid white; */
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: var(--text);
+    background: var(--bg);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +55,7 @@ a {
   }
 
   body {
-    color: white;
-    background: #000;
+    color: var(--text-dark);
+    background: var(--bg-dark);
   }
 }

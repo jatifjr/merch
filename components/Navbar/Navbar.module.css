@@ -1,7 +1,8 @@
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 13.5px 14px;
+    padding: 10px;
+    height: 80px;
     align-items: center;
     border-bottom: 1px solid #ffffff25;
     -webkit-user-select: none;
@@ -10,13 +11,13 @@
 
 .hiddenSpan {
     width: 64px;
-    height: 32px;
+    height: auto;
 }
 
 .logo {
-    color: #fff;
+    color: inherit;
     cursor: pointer;
-    font-size: 18pt;
+    font-size: 24pt;
     font-family: 'Megrim', cursive;
     font-weight: 700;
 }
@@ -26,7 +27,7 @@
 }
 
 .cartContainer {
-    color: #fff;
+    color: inherit;
     cursor: pointer;
     border: none;
     font-size: 14pt;
