@@ -7,10 +7,10 @@ import { CurrencyFormat } from "../../utilities/FormatCurrency";
 
 export const getStaticPaths = async () => {
     const query = `*[_type == "product"] {
-    slug{
-      current
-    }
-  }`;
+    slug {
+        current
+        }
+    }`;
 
     const product = await client.fetch(query);
 
@@ -90,7 +90,5 @@ const ProductDetails = ({ product }) => {
         </div>
     );
 };
-
-
 
 export default ProductDetails;
